@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    android:divider="?android:attr/dividerHorizontal"
+    tools:context="com.tristan.hansangdemos.fragments.EventBusFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <fragment
+        android:id="@+id/left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:name="com.tristan.hansangdemos.fragments.LeftListFragment"
+         />
+        
+    
+    <fragment
+        android:id="@+id/right"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:name="com.tristan.hansangdemos.fragments.RightContentFragment"
+
+        />
+
+</LinearLayout>

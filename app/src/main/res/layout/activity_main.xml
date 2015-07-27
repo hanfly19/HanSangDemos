@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.linearlistview.LinearListView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/toolbar_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="toolbar test"
+
+        />
+
+    <Button
+        android:id="@+id/eventbus_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="eventbus test"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/recycle_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="recycleview test"
+        android:layout_marginTop="10dp"
+        />
+</LinearLayout>

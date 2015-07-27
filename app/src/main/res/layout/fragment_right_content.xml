@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tristan.hansangdemos.fragments.RightContentFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/mTxt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:text="欢迎来到德莱联盟" />
+
+</FrameLayout>
