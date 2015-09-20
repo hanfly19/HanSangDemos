@@ -97,6 +97,30 @@ public class LeftListFragment extends Fragment implements AbsListView.OnItemClic
         EventBus.getDefault().register(this);
     }
 
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+////                    Thread.sleep(2000);
+//                    EventBus.getDefault().post(new Mtt());
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).run();
+        EventBus.getDefault().post(new Mtt());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -108,6 +132,7 @@ public class LeftListFragment extends Fragment implements AbsListView.OnItemClic
 
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);
+
         return view;
     }
 
@@ -115,17 +140,6 @@ public class LeftListFragment extends Fragment implements AbsListView.OnItemClic
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                    EventBus.getDefault().post(new Mtt());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).run();
     }
 
     @Override

@@ -3,20 +3,25 @@ package com.tristan.hansangdemos;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.tristan.hansangdemos.fragments.EventBusFragment;
+import com.tristan.hansangdemos.fragments.FragmentFac;
+import com.tristan.hansangdemos.fragments.RecyclerVIewFragment;
+import com.tristan.hansangdemos.fragments.ToolBarFragment;
 
 
-public class ContentActivity extends ActionBarActivity {
+public class ContentActivity extends AppCompatActivity {
 
 
-    public final static int EVENTBUS = 1;
-    public final static int TOOLBAR = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +33,11 @@ public class ContentActivity extends ActionBarActivity {
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         int type = intent.getIntExtra("type", 110);
-        switch (type) {
-            case EVENTBUS:
-                transaction.replace(R.id.content_layout, new EventBusFragment());
-                break;
-            case TOOLBAR:
-                break;
-        }
-
+        transaction.replace(R.id.content_layout, FragmentFac.getFragment(type));
         transaction.commit();
     }
 
+    //这注定是一个伤感的秋天
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -57,6 +56,7 @@ public class ContentActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
